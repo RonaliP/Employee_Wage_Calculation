@@ -64,3 +64,22 @@ do
 done
 echo "EMPLOYEE'S MONTHLY WAGE BASED ON HIS ATTENDANCE=" $Monthlywage
 
+#BELOW CODE CALCULATES WAGE FOR 20 DAYS OR 100 HOURS
+#UC6-Conditionalcheck
+
+
+hour=8
+Maxday=20
+for((i=1;i<=20;i++))
+do
+    ispresent=$((RANDOM%2))
+
+    if [ $ispresent -eq 1 ]
+    then
+                hour=$(($hour+$hour))
+        fi
+done
+echo "TOTAL WORKING HOURS EMPLOYEE WORKED IN 20 DAYS=" $hour
+TotalWage=$((20*$hour))
+echo "TOTAL WAGE WILL BE GIVEN=" $TotalWage
+
