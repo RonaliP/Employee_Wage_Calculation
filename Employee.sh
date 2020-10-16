@@ -50,3 +50,17 @@ case $choice in
 	;;
 esac
 
+#BELOW CODE WILL CALCULATE MONTHLY WAGE
+#UC5-Monthlywage_calculation
+Monthlywage=0
+for((i=1;i<=30;i++))
+do
+    ispresent=$((RANDOM%2))
+#       echo $ispresent
+    if [ $ispresent == 1 ]
+    then
+             Monthlywage=$(( $Monthlywage + (20*8)))
+     fi
+done
+echo "EMPLOYEE'S MONTHLY WAGE BASED ON HIS ATTENDANCE=" $Monthlywage
+
