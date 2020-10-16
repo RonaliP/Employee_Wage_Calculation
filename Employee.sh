@@ -68,9 +68,9 @@ echo "EMPLOYEE'S MONTHLY WAGE BASED ON HIS ATTENDANCE=" $Monthlywage
 #UC6-Conditionalcheck
 
 
-hour=8
+hour=1
 Maxday=20
-for((i=1;i<=20;i++))
+for((i=1;i<=$maxday;i++))
 do
     ispresent=$((RANDOM%2))
 
@@ -83,3 +83,24 @@ echo "TOTAL WORKING HOURS EMPLOYEE WORKED IN 20 DAYS=" $hour
 TotalWage=$((20*$hour))
 echo "TOTAL WAGE WILL BE GIVEN=" $TotalWage
 
+#BELOW CODE WILL ADD FUNCTION TO THE ABOVE CONDITIONALCHECK SNIPPET
+#UC7-Function
+
+calculate()
+{
+Maxday=$1
+for((i=1;i<=$Maxday;i++))
+do
+        ispresent=$((RANDOM%2))
+
+        if [ $ispresent -eq 1 ]
+        then
+                hour=$(($hour+$hour))
+        fi
+done
+echo "TOTAL WORKING HOURS EMPLOYEE WORKED IN 20 DAYS=" $hour
+TotalWage=$((20*$hour))
+echo "TOTAL WAGE WILL BE GIVEN=" $TotalWage
+}
+
+calculate 20
