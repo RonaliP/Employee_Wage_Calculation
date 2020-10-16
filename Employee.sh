@@ -22,3 +22,12 @@ then
 	echo "Dailywage of employee per day "
 	echo "20 rs/- per hour*8 hours a day is $Dailywage"
 fi
+
+#BELOW CODE WILL ADD PART TIME WAGE CALCULATION FEATURE
+#UC3-Parttime_wage
+parttime=$((RANDOM%2))
+if [ $parttime == 1 ]
+then
+	Partwage=$((20*8))
+	echo "Part time wage is $Partwage"
+fi
