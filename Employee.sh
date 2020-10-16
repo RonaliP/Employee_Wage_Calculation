@@ -104,3 +104,31 @@ echo "TOTAL WAGE WILL BE GIVEN=" $TotalWage
 }
 
 calculate 20
+
+#BELOW CODE WILL DISPLAY STORED DAILY WAGES ALONG WITH TOTAL WAGES
+#UC8-StoreWages
+
+calculate()
+{
+Maxday=$1
+count=0
+TotalWage=0
+for((i=1;i<=$Maxday;i++))
+do
+        ispresent=$((RANDOM%2))
+
+        if [ $ispresent -eq 1 ]
+        then
+		count=$((count+1))
+                hour=$(($hour+$hour))
+		Perdaywage=$((Rate_hour*working_hour))
+		arr[$i]=$(("$Perdaywage"))
+                TotalWage=$(($TotalWage+$Perdaywage))
+	 echo "Day $count == ${arr[$i]} == $TotalWage"
+	fi
+done
+
+}
+
+calculate 20
+
