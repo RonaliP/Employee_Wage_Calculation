@@ -2,9 +2,6 @@
 
 echo "HELLO,WELCOME TO EMPLOYEE INFORMATION AND WAGE CALCULATION PROGRAM"
 
-<<<<<<< HEAD
-
-=======
 #BELOW CODE WILL CHECK IF EMPLOYEE PRESENT OR NOT
 #UC1-Attendance_check
 
@@ -15,6 +12,13 @@ then
 else
 	echo "EMPLOYEE IS ABSENT TODAY"
 fi
->>>>>>> fbad995f9a5a2496161a1ce3cc95c25427ceb2ba
 
 
+#BELOW CODE WILL CALCULATE DAILYWAGE IF EMPLOYEE PRESENT
+#UC2-Dailywage_calculation
+if [ $check == 1 ]
+then
+	Dailywage=$((20*8))
+	echo "Dailywage of employee per day "
+	echo "20 rs/- per hour*8 hours a day is $Dailywage"
+fi
