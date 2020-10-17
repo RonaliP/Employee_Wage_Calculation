@@ -13,7 +13,7 @@ else
 	echo "EMPLOYEE IS ABSENT TODAY"
 fi
 
-
+echo "_____________________________________________"
 #BELOW CODE WILL CALCULATE DAILYWAGE IF EMPLOYEE PRESENT
 #UC2-Dailywage_calculation
 working_hour=8
@@ -24,7 +24,7 @@ then
 	echo "Dailywage of employee per day "
 	echo "20 rs/- per hour*8 hours a day is $Dailywage"
 fi
-
+echo "______________________________________________"
 #BELOW CODE WILL ADD PART TIME WAGE CALCULATION FEATURE
 #UC3-Parttime_wage
 parttime=$((RANDOM%2))
@@ -33,7 +33,7 @@ then
 	Partwage=$((working_hour*Rate_hour))
 	echo "Part time wage is $Partwage"
 fi
-
+echo "_____________________________________________"
 #BELOW CODE WILL CALCULATE WAGE USING SWITCH CASE
 #UC4-Switchcase
 
@@ -49,7 +49,7 @@ case $choice in
 3) echo "EMPLOYEE IS ABSENT TODAY"
 	;;
 esac
-
+echo "_____________________________________________"
 #BELOW CODE WILL CALCULATE MONTHLY WAGE
 #UC5-Monthlywage_calculation
 Monthlywage=0
@@ -63,14 +63,14 @@ do
      fi
 done
 echo "EMPLOYEE'S MONTHLY WAGE BASED ON HIS ATTENDANCE=" $Monthlywage
-
+echo "______________________________________________"
 #BELOW CODE CALCULATES WAGE FOR 20 DAYS OR 100 HOURS
 #UC6-Conditionalcheck
 
 
 hour=1
 Maxday=20
-for((i=1;i<=$maxday;i++))
+for((i=1;i<=$Maxday;i++))
 do
     ispresent=$((RANDOM%2))
 
@@ -82,13 +82,15 @@ done
 echo "TOTAL WORKING HOURS EMPLOYEE WORKED IN 20 DAYS=" $hour
 TotalWage=$((20*$hour))
 echo "TOTAL WAGE WILL BE GIVEN=" $TotalWage
-
+echo "____________________________________________________"
 #BELOW CODE WILL ADD FUNCTION TO THE ABOVE CONDITIONALCHECK SNIPPET
 #UC7-Function
+
 
 calculate()
 {
 Maxday=$1
+hour=$2
 for((i=1;i<=$Maxday;i++))
 do
         ispresent=$((RANDOM%2))
@@ -103,8 +105,8 @@ TotalWage=$((20*$hour))
 echo "TOTAL WAGE WILL BE GIVEN=" $TotalWage
 }
 
-calculate 20
-
+calculate 20 8
+echo "_________________________________________________"
 #BELOW CODE WILL DISPLAY STORED DAILY WAGES ALONG WITH TOTAL WAGES
 #UC8-StoreWages
 
